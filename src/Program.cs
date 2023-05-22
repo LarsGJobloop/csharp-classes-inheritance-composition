@@ -11,14 +11,13 @@
     // different versions of the logger we can easily
     // swap the console logger out for a file logger
     // But we do need to decide where to store our logfiles
-    string workingDirectory = System.IO.Directory.GetCurrentDirectory();
     string logDirectory = "/logs";
     string logFile = "/log.txt";
-
     System.Console.WriteLine($"\nLogging to file {"." + logDirectory + logFile}\n");
+
     Logger.ILogger log = new Logger.File("." + logDirectory + logFile);
 
-    // Place to store input
+    // Place to store input string
     string? input;
 
     // Simple loop to query for input and logging that
