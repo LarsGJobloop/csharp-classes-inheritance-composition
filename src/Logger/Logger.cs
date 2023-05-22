@@ -24,7 +24,7 @@ namespace Logger
         }
         public void Error(string message)
         {
-            System.Console.WriteLine(System.String.Format("ERROR {1:hh:mm:ss}\t {0}", message, System.DateTime.Now));
+            System.Console.WriteLine(System.String.Format("ERRO {1:hh:mm:ss}\t {0}", message, System.DateTime.Now));
         }
     }
 
@@ -62,7 +62,7 @@ namespace Logger
         {
             using (System.IO.StreamWriter writer = System.IO.File.AppendText(logPath))
             {
-                writer.WriteLine(System.String.Format("ERROR {1:hh:mm:ss}\t {0}", message, System.DateTime.Now));
+                writer.WriteLine(System.String.Format("ERRO {1:hh:mm:ss}\t {0}", message, System.DateTime.Now));
             }
         }
     }
