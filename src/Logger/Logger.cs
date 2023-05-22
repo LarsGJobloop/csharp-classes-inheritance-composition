@@ -1,7 +1,7 @@
 namespace Logger
 {
   // This is a description of what methods and their signature
-  // a class implementing the ILogger interface is required to have
+  // a class using the ILogger interface is required to implement
   interface ILogger
   {
     public void Info(string message);
