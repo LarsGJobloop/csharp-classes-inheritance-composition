@@ -16,15 +16,15 @@ namespace Logger
   {
     public void Info(string message)
     {
-      System.Console.WriteLine(message);
+      System.Console.WriteLine(System.String.Format( "INFO {1:hh:mm:ss}\t {0}",message, System.DateTime.Now));
     }
     public void Warn(string message)
     {
-      System.Console.WriteLine(message);
+      System.Console.WriteLine(System.String.Format( "WARN {1:hh:mm:ss}\t {0}",message, System.DateTime.Now));
     }
     public void Error(string message)
     {
-      System.Console.WriteLine(message);
+      System.Console.WriteLine(System.String.Format( "ERROR {1:hh:mm:ss}\t {0}",message, System.DateTime.Now));
     }
   }
 
@@ -44,23 +44,23 @@ namespace Logger
 
     public void Info(string message)
     {
-      using (System.IO.StreamWriter writer = new System.IO.StreamWriter(logPath))
+      using (System.IO.StreamWriter writer = System.IO.File.AppendText(logPath))
       {
-        writer.WriteLine(message);
+        writer.WriteLine(System.String.Format( "INFO {1:hh:mm:ss}\t {0}",message, System.DateTime.Now));
       }}
 
     public void Warn(string message)
     {
-      using (System.IO.StreamWriter writer = new System.IO.StreamWriter(logPath))
+      using (System.IO.StreamWriter writer = System.IO.File.AppendText(logPath))
       {
-        writer.WriteLine(message);
+        writer.WriteLine(System.String.Format( "WARN {1:hh:mm:ss}\t {0}",message, System.DateTime.Now));
       }}
 
     public void Error(string message)
     {
-      using (System.IO.StreamWriter writer = new System.IO.StreamWriter(logPath))
+      using (System.IO.StreamWriter writer = System.IO.File.AppendText(logPath))
       {
-        writer.WriteLine(message);
+        writer.WriteLine(System.String.Format( "ERROR {1:hh:mm:ss}\t {0}",message, System.DateTime.Now));
       }}     
   }
 }
